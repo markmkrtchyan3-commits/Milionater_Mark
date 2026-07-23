@@ -1,0 +1,34 @@
+*{
+    box-sizing: border-box;
+}
+
+img{
+    width: 100%;
+}
+
+body{
+    margin: 0;
+    color: rgb(255, 0, 0);
+    font-family: 'Montserrat', sans-serif;
+    height: 100%;
+}
+
+.start-btn{
+    outline: none;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 18px;
+    background: rgb(red);
+    color: blue;
+    text-shadow: 2px 2px 4px rgba(rgb(0, 0, 7));
+    
+}
+
+
+
+.start-btn:hover{
+    box-shadow: 0 0 15px 0px rgb( blue);
+    transform: scale (1.2);
+}
+
