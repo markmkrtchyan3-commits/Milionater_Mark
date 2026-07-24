@@ -1,119 +1,258 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Document</title>
- <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet">
-      <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
     <section class="game">
-     <div class="container">
-      <button class="start-btn">Սկսել խաղը</button>
-      <div class="rusel-popup" id="ruselPopup"></div>
-      <div class="rules-content">
-       "Ո՞վ է ուզում դառնալ Միլիոնատեր"<b></b>
-       ✔️ Խաղը բաղկացած է 15 հարցից։<br>
-       ✔️ Յուրաքանչյուր ճիշտ պատասխանի դեպքում խաղացողն անցնում է հաջորդ հարցին։<br>
-       ✔️ Խաղում կա 2 անձեռնմխելի գումար 5-րդ և 10-րդ հարցերից հետո։<br>
-       ✔️ Խաղացողը կարող է օգտվել՝ <em>«50/50»</em>, <em>«Դահլիճի օգնություն»</em>, <em>«Զանգ ընկերոջը»</em>, <em>«Հարցը փոխելու»</em> և <em>«ԱԻ-ի օգնություն»</em> հնարավություններից։<br>
-       ✔️ Սխալ պատասխանի դեպքում խաղացողը ստանում է վերջին շահած անձեռնմխելի գումարը։<br>
-       ✔️ Խաղացողը կարող է ցանկացած պահի դադարեցնել խաղը  և վերցնել շահած գումարը։<br><br>
-       ՀԱՋՈՂՈՒԹՅՈՒՆ ՔԵԶ՝ ԱՊԱԳԱ ՄԻԼԻՈՆԱՏԵՐ։ 💰      
-      </div>
-     </div>
-     <button>Կանոներ</button>
-    <div class="game-bloock">
-     <h1>"Ո՞վ է ուզում դառնալ Միլիոնատեր"</h1>
-    <div class="game-wrap">
-     <div class="block-questions">
-      <div class="qustion questions_1 qustion-active">
-       <h2>Նվագախմբի տարատեսակ</h2>
-       <div class="block-answer"></div>
-       <div class="answer">Ա Դաղային</div>
-       <div class="answer">Բ Կողային</div>
-       <div class="answer">Գ Փողային</div>
-       <div class="answer">Ղ Փաղասերային</div>
-      </div>
-     </div>
-
-
-
-
-!2 ---15 --hatcer>
-
-
-    <div class="qustion qustion_extra" id="extra" >
-        <h2>Ըստ իմ խոստովանություն ինչի աստվածն էր Օլե Լուկայեն ՝ Անդերսենի համանուն հեքիաթից</h2>
-        <div class="block-answer">
-           <div class="answer">Ա Հեքիաթից</div>
-       <div class="answer">Բ Մանկության</div>
-       <div class="answer">Գ  Գիշերվա</div>
-       <div class="answer">Ղ Երազներ</div> 
-        </div>
-
-    </div>
-
-<button class="end-btn" id="end">Դասրացներ Խաղը</button>
-    </div>
-    <div class="block-win">
-        <div class="hints">
-            <div class="hints-help fifty-fifty">
-                <span class="close-left"></span>
-                 <span class="close-right"></span>
-                 50/50
-
-                 <div class="hints-help hall-help"></div>
-             <span class="close-left"></span>
-                 <span class="close-right"></span>
-                 <i class="fas fa-users"></i>
-
-                   <div class="hints-help call-friend"></div>
-             <span class="close-left"></span>
-                 <span class="close-right"></span>
-                 <i class="fas fa-users"></i>
-
-                  <div class="hints-help changed-question" id="hintBox"></div>
-             <span class="close-left"></span>
-                 <span class="close-right"></span>
-                 <i class="fas fa-users"></i>
-
-
-                 <div class="hints-help ai help"></div>
-             <span class="close-left"></span>
-                 <span class="close-right"></span>
-                 <i class="fas fa-users"></i>
+        <div class="container">
+            <button class="start-btn">Սկսել խաղը</button>
+            <div class="rules-popup" id="rulesPopup">
+                <div class="rules-content">
+                    "Ո՞վ է ուզում դառնալ Միլիոնատեր"<b></b>
+                    ✔️ Խաղը բաղկացած է 15 հարցից։<br>
+                    ✔️ Յուրաքանչյուր ճիշտ պատասխանի դեպքում խաղացողն անցնում է հաջորդ հարցին։<br>
+                    ✔️ Խաղում կա 2 անձեռնմխելի գումար 5-րդ և 10-րդ հարցերից հետո։<br>
+                    ✔️ Խաղացողը կարող է օգտվել՝ <em>«50/50»</em>, <em>«Դահլիճի օգնություն»</em>, <em>«Զանգ
+                        ընկերոջը»</em>, <em>«Հարցը փոխելու»</em> և <em>«ԱԻ-ի օգնություն»</em> հնարավություններից։<br>
+                    ✔️ Սխալ պատասխանի դեպքում խաղացողը ստանում է վերջին շահած անձեռնմխելի գումարը։<br>
+                    ✔️ Խաղացողը կարող է ցանկացած պահի դադարեցնել խաղը և վերցնել շահած գումարը։<br><br>
+                    ՀԱՋՈՂՈՒԹՅՈՒՆ ՔԵԶ՝ ԱՊԱԳԱ ՄԻԼԻՈՆԱՏԵՐ։ 💰
+                </div>
             </div>
-           <div class="wins">
-        <div class="wins-block"><span>15.</span> 5 000 000</div>
-        <div class="wins-block"><span>14.</span> 3 000 000</div>
-    <div class="wins-block"><span>13.</span> 2 000 000</div>
-    <div class="wins-block"><span>12.</span> 1 000 000</div>
-    <div class="wins-block"><span>11.</span> 500 000</div>
- <div class="wins-block"><span>10.</span> 250 000</div>
-  <div class="wins-block"><span>9.</span> 125 000</div>
-   <div class="wins-block"><span>8.</span> 64 000</div>
-    <div class="wins-block"><span>7.</span> 32 000</div>
-     <div class="wins-block"><span>6.</span>16 000</div>
-      <div class="wins-block"><span>5.</span> 8 000</div>
-       <div class="wins-block"><span>4.</span> 4 000</div>
-        <div class="wins-block"><span>3.</span> 2 000</div>
-         <div class="wins-block"><span>2.</span> 1 000</div>
-          <div class="wins-block"><span>1.</span> 500</div>
-          </div>
-          <div class="ai-explain-block" id="aiExplainBlock">
-            <span class="ai-explain-close" id="aiExplainClose">&times;</span>
-            <h3>ԱԲ - պատասխանի</h3>
-            
-          </div>
+
         </div>
-    
-       </div>
-    </div>
-   
-    </div>
-     
+        <button class="information" id="shawRules">Կանոներ</button>
+        <div class="game-block">
+            <h1 class="game-title">"Ո՞վ է ուզում դառնալ Միլիոնատեր"</h1>
+            <div class="game-wrap">
+                <div class="block-questions">
+                    <div class="qustion questions_1 qustion-active">
+                        <h2>Նվագախմբի տարատեսակ</h2>
+                        <div class="block-answer"></div>
+                        <div class="answer">Ա Դաղային</div>
+                        <div class="answer">Բ Կողային</div>
+                        <div class="answer">Գ Փողային</div>
+                        <div class="answer">Ղ Փաղասերային</div>
+                    </div>
+                </div>
+
+                <div class="qustion qustion_extra" id="extra">
+                    <h2>Ո՞ր քաղաքն է հայտնի որպես «Հավերժական քաղաք</h2>
+                    <div class="block-answer">
+                        <div class="answer">Ա Փարիզ </div>
+                        <div class="answer">Բ Հռոմ</div>
+                        <div class="answer">Գ Աթենք</div>
+                        <div class="answer">Դ Լոնդոն</div>
+                    </div>
+
+                </div>
+
+                <div class="qustion qustion_extra" id="q2">
+                    <h2>Ո՞րն է մարդու օրգանիզմի ամենամեծ օրգանը։</h2>
+                    <div class="block-answer">
+                        <div class="answer">Ա Սիրտ</div>
+                        <div class="answer">Բ Լյարդ</div>
+                        <div class="answer">Գ Մաշկ</div>
+                        <div class="answer">Դ Թոք</div>
+                    </div>
+                </div>
+
+                <div class="qustion qustion_extra" id="q3">
+                    <h2>Ո՞ր գետն է հոսում Փարիզով։</h2>
+                    <div class="block-answer">
+                        <div class="answer">Ա Դանուբ</div>
+                        <div class="answer">Բ Սենա</div>
+                        <div class="answer">Գ Վոլգա</div>
+                        <div class="answer">Դ Ռեյն</div>
+                    </div>
+                </div>
+
+                <div class="qustion qustion_extra" id="q4">
+                    <h2>Ո՞ր երկրում են անցկացվում Օլիմպիական խաղերի ավանդական ջահավառման արարողությունները։</h2>
+                    <div class="block-answer">
+                        <div class="answer">Ա Իտալիա</div>
+                        <div class="answer">Բ Հունաստան</div>
+                        <div class="answer">Գ Ֆրանսիա</div>
+                        <div class="answer">Դ Ճապոնիա</div>
+                    </div>
+                </div>
+
+                <div class="qustion qustion_extra" id="q5">
+                    <h2>Ո՞ր գազն է ամենաշատը կազմում Երկրի մթնոլորտը։</h2>
+                    <div class="block-answer">
+                        <div class="answer">Ա Թթվածին</div>
+                        <div class="answer">Բ Ազոտ</div>
+                        <div class="answer">Գ Ածխաթթու գազ</div>
+                        <div class="answer">Դ Ջրածին</div>
+                    </div>
+                </div>
+
+                <div class="qustion qustion_extra" id="q6">
+                    <h2>Ո՞րն է աշխարհի ամենախորը օվկիանոսային իջվածքը։</h2>
+                    <div class="block-answer">
+                        <div class="answer">Ա Պուերտո Ռիկոյի իջվածք</div>
+                        <div class="answer">Բ Մարիանյան իջվածք</div>
+                        <div class="answer">Գ Տոնգայի իջվածք</div>
+                        <div class="answer">Դ Ճավայի իջվածք</div>
+                    </div>
+                </div>
+
+                <div class="qustion qustion_extra" id="q7">
+                    <h2>Ո՞վ է նկարել «Աստղալից գիշեր» կտավը։</h2>
+                    <div class="block-answer">
+                        <div class="answer">Ա Պաբլո Պիկասո</div>
+                        <div class="answer">Բ Լեոնարդո դա Վինչի</div>
+                        <div class="answer">Գ Վինսենթ վան Գոգ</div>
+                        <div class="answer">Դ Կլոդ Մոնե</div>
+                    </div>
+                </div>
+
+                <div class="qustion qustion_extra" id="q8">
+                    <h2>Ո՞ր քիմիական տարրն ունի Ag նշանը։</h2>
+                    <div class="block-answer">
+                        <div class="answer">Ա Ոսկի</div>
+                        <div class="answer">Բ Արծաթ</div>
+                        <div class="answer">Գ Ալյումին</div>
+                        <div class="answer">Դ Արգոն</div>
+                    </div>
+                </div>
+
+                <div class="qustion qustion_extra" id="q9">
+                    <h2>Ո՞ր մոլորակն ունի ամենաշատ բնական արբանյակները։</h2>
+                    <div class="block-answer">
+                        <div class="answer">Ա Մարս</div>
+                        <div class="answer">Բ Յուպիտեր</div>
+                        <div class="answer">Գ Սատուրն</div>
+                        <div class="answer">Դ Նեպտուն</div>
+                    </div>
+                </div>
+
+                <div class="qustion qustion_extra" id="q10">
+                    <h2>Ո՞ր թվականին ընկավ Բեռլինի պատը։</h2>
+                    <div class="block-answer">
+                        <div class="answer">Ա 1987</div>
+                        <div class="answer">Բ 1988</div>
+                        <div class="answer">Գ 1989</div>
+                        <div class="answer">Դ 1991</div>
+                    </div>
+                </div>
+
+                <div class="qustion qustion_extra" id="q11">
+                    <h2>Ո՞վ է ձևակերպել համընդհանուր ձգողության օրենքը։</h2>
+                    <div class="block-answer">
+                        <div class="answer">Ա Գալիլեո Գալիլեյ</div>
+                        <div class="answer">Բ Ալբերտ Էյնշտեյն</div>
+                        <div class="answer">Գ Իսահակ Նյուտոն</div>
+                        <div class="answer">Դ Նիկոլա Տեսլա</div>
+                    </div>
+                </div>
+
+                <div class="qustion qustion_extra" id="q12">
+                    <h2>Ո՞րն է աշխարհի ամենամեծ անապատը։</h2>
+                    <div class="block-answer">
+                        <div class="answer">Ա Սահարա</div>
+                        <div class="answer">Բ Գոբի</div>
+                        <div class="answer">Գ Անտարկտիդայի բևեռային անապատ</div>
+                        <div class="answer">Դ Կալահարի</div>
+                    </div>
+                </div>
+
+                <div class="qustion qustion_extra" id="q13">
+                    <h2>Ո՞ր լեզվով է գրվել «Աստվածային կատակերգությունը»։</h2>
+                    <div class="block-answer">
+                        <div class="answer">Ա Լատիներեն</div>
+                        <div class="answer">Բ Իտալերեն</div>
+                        <div class="answer">Գ Ֆրանսերեն</div>
+                        <div class="answer">Դ Հունարեն</div>
+                    </div>
+                </div>
+
+
+
+
+
+                <div class="qustion qustion_extra" id="extra">
+                    <h2>Ըստ իմ խոստովանություն ինչի աստվածն էր Օլե Լուկայեն ՝ Անդերսենի համանուն հեքիաթից</h2>
+                    <div class="block-answer">
+                        <div class="answer">Ա Հեքիաթից</div>
+                        <div class="answer">Բ Մանկության</div>
+                        <div class="answer">Գ Գիշերվա</div>
+                        <div class="answer">Ղ Երազներ</div>
+                    </div>
+
+                </div>
+
+                <button class="end-btn" id="end">Դասրացներ Խաղը</button>
+            </div>
+            <div class="block-win">
+                <div class="hints">
+                    <div class="hints-help fifty-fifty">
+                        <span class="close-left"></span>
+                        <span class="close-right"></span>
+                        50/50
+
+                        <div class="hints-help hall-help"></div>
+                        <span class="close-left"></span>
+                        <span class="close-right"></span>
+                        <i class="fas fa-users"></i>
+
+                        <div class="hints-help call-friend"></div>
+                        <span class="close-left"></span>
+                        <span class="close-right"></span>
+                        <i class="fas fa-users"></i>
+
+                        <div class="hints-help changed-question" id="hintBox"></div>
+                        <span class="close-left"></span>
+                        <span class="close-right"></span>
+                        <i class="fas fa-users"></i>
+
+
+                        <div class="hints-help ai help"></div>
+                        <span class="close-left"></span>
+                        <span class="close-right"></span>
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="wins">
+                        <div class="wins-block"><span>15.</span> 5 000 000</div>
+                        <div class="wins-block"><span>14.</span> 3 000 000</div>
+                        <div class="wins-block"><span>13.</span> 2 000 000</div>
+                        <div class="wins-block"><span>12.</span> 1 000 000</div>
+                        <div class="wins-block"><span>11.</span> 500 000</div>
+                        <div class="wins-block"><span>10.</span> 250 000</div>
+                        <div class="wins-block"><span>9.</span> 125 000</div>
+                        <div class="wins-block"><span>8.</span> 64 000</div>
+                        <div class="wins-block"><span>7.</span> 32 000</div>
+                        <div class="wins-block"><span>6.</span>16 000</div>
+                        <div class="wins-block"><span>5.</span> 8 000</div>
+                        <div class="wins-block"><span>4.</span> 4 000</div>
+                        <div class="wins-block"><span>3.</span> 2 000</div>
+                        <div class="wins-block"><span>2.</span> 1 000</div>
+                        <div class="wins-block"><span>1.</span> 500</div>
+                    </div>
+                    <div class="ai-explain-block" id="aiExplainBlock">
+                        <span class="ai-explain-close" id="aiExplainClose">&times;</span>
+                        <h3>ԱԲ - պատասխանի</h3>
+                        <p class="ai-explain-text" id="aiExplainText"></p>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+        </div>
+
+        </div>
+
     </section>
+
+    <script> src = "js/script.js"</script>
 </body>
+
 </html>
