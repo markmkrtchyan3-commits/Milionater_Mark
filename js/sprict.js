@@ -197,4 +197,6 @@ startBtn.addEventListener('click', () => {//Խաղի սկիզբը կոճակի �
 
 
 
-    
+    btnAnswers.forEach((btnAnswers)=>{
+      
+    })
